@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Browser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌐 Mini Web Browser</h1>
+
+    <div class="search-box">
+        <input type="text" id="urlInput" placeholder="Enter website URL (e.g. example.com)">
+        <button onclick="loadPage()">Go</button>
+    </div>
+
+    <iframe id="viewer"></iframe>
+</div>
+
+<script>
+function loadPage() {
+    const url = document.getElementById("urlInput").value.trim();
+
+    if (!url) {
+        alert("Please enter a URL");
+        return;
+    }
+
+    fetch("/fetch", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ url })
+    })
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("viewer").srcdoc = data;
+    })
+    .catch(() => {
+        alert("❌ Error loading page");
+    });
+}
+</script>
+
+</body>
+</html>
