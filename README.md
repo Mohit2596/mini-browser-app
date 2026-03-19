@@ -36,7 +36,7 @@ mini-browser-app/
 ---
 
 
-## 🌐 Usage
+##  Usage
 
 1. Enter a website URL (example: `example.com`)
 2. Click the **Go** button
@@ -52,24 +52,10 @@ Some websites (like Google, Facebook) may not load due to:
 * CORS policy
 * X-Frame-Options blocking
 
----
-
-##  Deployment
-
-This project requires a backend server, so it **cannot be deployed on GitHub Pages**.
-
-You can deploy it on:
-
-* Render
-* Railway
-* Cyclic
-
----
 
 ##  Author
 
 **Mohit Kumar**
 
----
 
 
